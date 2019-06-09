@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+<button (click)='doIt()'>change</button>
+<app-viz #viz [data]="data"></app-viz>
+
+<div>
+  <h1>Purpose</h1>
+  <p>
+    This project shows how to visualize a line graph using <a href="https://d3js.org/" target="_blank">d3</a>.
+    Here are the lessons of the coding demonstration.
+  </p>
+  <h2>Angular</h2>
+  <ul>
+    <li>How to detect when browser width changes.</li>
+    <li>React to changes in display size. The graph will redraw when the width of the browser changes.</li>
+  </ul>
+  <h2>d3</h2>
+  <ul>
+    <li>Draw a simple line graph.</li>
+    <li>Control which ticks are display.</li>
+    <li>Rotate x-axis ticks.</li>
+  </ul>
+  <h1>References</h1>
+  <ul>
+      <li>
+        <a href="https://bl.ocks.org/erikvullings/41be28677574fd484b43e91413a7e45d" target="_blank">
+          Horizontal axis with major and minor ticks using d3 version 4
+        </a>
+      </li>
+      <li>
+          <a href="https://stackoverflow.com/questions/35527456/angular-window-resize-event" target="_blank">
+            Angular window resize event
+          </a>
+      </li>
+      <li>
+          <a href="https://stackoverflow.com/questions/48708119/how-to-get-width-of-dom-element-in-angular-4-after-page-is-loaded?rq=1" target="_blank">
+            How to get width of (DOM) Element in Angular 4 after page is loaded
+          </a>
+      </li>
+      <li>
+          <a href="https://blog.angular-university.io/angular-debugging/" target="_blank">
+            Angular Debugging "Expression has changed after it was checked": Simple Explanation (and Fix)
+          </a>
+      </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
