@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
+import d3Tip from "d3-tip";
 
 @Component({
   selector: 'app-bar',
@@ -70,12 +71,19 @@ export class BarComponent implements OnInit {
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
 
+    var tip = d3Tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(d => `<span style='color:red; font: 10px sans-serif;'>${d.y}</span>`);
+
     const svg = d3.select('#barChart')
       .attr('width', svgWidth)
       .attr('height', svgHeight)
       .append('g')
         .attr('id', 'gBar')
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
+    
+    svg.call(tip);
 
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
@@ -104,7 +112,9 @@ export class BarComponent implements OnInit {
         .attr('x', d => xScale(d.x))
         .attr('y', d => yScale(d.y))
         .attr('width', xScale.bandwidth())
-        .attr('height', d => height - yScale(d.y));
+        .attr('height', d => height - yScale(d.y))
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide);
   }
 
 }
