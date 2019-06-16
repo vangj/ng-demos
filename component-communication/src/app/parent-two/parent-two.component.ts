@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComService } from '../com.service';
 
 @Component({
   selector: 'app-parent-two',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentTwoComponent implements OnInit {
 
-  constructor() { }
+  messageReceived = '';
+
+  constructor(private readonly comService: ComService) { 
+    comService.childMessages$.subscribe(m => {
+      this.messageReceived = m;
+      this.sendMessage();
+    });
+  }
 
   ngOnInit() {
+  }
+
+  sendMessage(): void {
+    this.comService.sendMessageFromParent(`hi from parent ${Date.now()}`);
   }
 
 }

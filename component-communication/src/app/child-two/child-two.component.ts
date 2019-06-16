@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComService } from '../com.service';
 
 @Component({
   selector: 'app-child-two',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class ChildTwoComponent implements OnInit {
 
   count = 0;
+  messageReceived = '';
   
-  constructor() { }
+  constructor(private readonly comService: ComService) { 
+    this.comService.parentMessage$.subscribe(m => this.messageReceived = m);
+  }
 
   ngOnInit() {
   }
 
   clicked(): void {
     this.count += 1;
+    this.comService.sendMessageFromChild(`hi child ${this.count}`);
   }
 }
