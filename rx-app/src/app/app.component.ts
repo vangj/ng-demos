@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { of, forkJoin, fromEvent } from 'rxjs';
-import { map, tap, flatMap, mapTo, scan, filter, debounceTime } from 'rxjs/operators';
+import { of, forkJoin, fromEvent, EMPTY, } from 'rxjs';
+import { map, tap, flatMap, mapTo, scan, filter, debounceTime, concatMap, expand, toArray} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,23 @@ export class AppComponent implements AfterViewInit {
   title = 'rx-app';
 
   ngAfterViewInit(): void {
-    this.doScanDemo();
+    this.doExpandDemo()
+  }
+
+  /**
+   * Expand demo.
+   * 
+   * - https://rxjs-dev.firebaseapp.com/api/operators/expand
+   * - https://stackoverflow.com/questions/43430536/rxjs-expand-array-from-promise
+   * - https://ncjamieson.com/understanding-expand/
+   */
+  private doExpandDemo(): void {
+    const stuff = of({item: 0})
+    .pipe(
+      expand((data) => data.item < 10 ? of({item: data.item + 1}) : EMPTY),
+      toArray()
+    );
+    stuff.subscribe((data) => console.log(data));
   }
 
   private doScanDemo(): void {
