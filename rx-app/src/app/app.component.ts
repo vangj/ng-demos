@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit {
         tap(r => console.log(r)),
         flatMap(() => of('d'))
       );
-    forkJoin(a, b, c)
+    forkJoin([a, b, c])
       .subscribe(
         r => console.log(r),
         e => console.error(e)
@@ -50,7 +50,7 @@ export class AppComponent implements AfterViewInit {
       .pipe(
         flatMap(() => of('d'))
       );
-    forkJoin(a, b, c)
+    forkJoin([a, b, c])
       .subscribe(
         r => console.log(r),
         e => console.error(e)
