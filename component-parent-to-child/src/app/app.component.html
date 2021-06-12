@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <button (click)="byBindingButtonClicked()">By Binding</button>
+  </div>
+  <div>
+    <app-child [counter]="counter"></app-child>
+  </div>
+</div>
+
+<hr/>
+
+<div>
+  <div>
+    <button (click)="byRefButtonClicked()">By ViewChild Reference</button>
+  </div>
+  <div>
+    <app-child-ref #childRef></app-child-ref>
+  </div>
+</div>
+
+<hr/>
+
+<div>
+  <div>
+    <button (click)="byLifecycleButtonClicked()">By Lifecycle</button>
+  </div>
+  <div>
+    <app-child-lifecycle [counter]="lifecycleCounter"></app-child-lifecycle>
+  </div>
+</div>
