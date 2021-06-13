@@ -1,0 +1,25 @@
+<div>
+  <h2>Two-way Binding</h2>
+  <app-child-bind [(counter)]="counter"></app-child-bind>
+
+  <h3>Parent</h3>
+
+  <div>
+    <div>
+      <button (click)="incrementCounter()">Increment</button>
+      <button (click)="decrementCounter()">Decrement</button>
+    </div>
+    <div>
+      {{counter}}
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<div>
+  <h2>Output Binding</h2>
+  <app-child-output (timer)="onTimer($event)"></app-child-output>
+
+  {{msPastEpoch}}
+</div>
