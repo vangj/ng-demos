@@ -28,3 +28,14 @@
     <app-child-lifecycle [counter]="lifecycleCounter"></app-child-lifecycle>
   </div>
 </div>
+
+<hr/>
+
+<div>
+  <div>
+    <button (click)="byInterceptButtonClicked()">By Intercept</button>
+  </div>
+  <div>
+    <app-child-intercept [counter]="interceptCounter"></app-child-intercept>
+  </div>
+</div>

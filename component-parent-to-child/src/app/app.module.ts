@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { ChildRefComponent } from './child-ref/child-ref.component';
 import { ChildLifecycleComponent } from './child-lifecycle/child-lifecycle.component';
+import { ChildInterceptComponent } from './child-intercept/child-intercept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent,
     ChildRefComponent,
-    ChildLifecycleComponent
+    ChildLifecycleComponent,
+    ChildInterceptComponent
   ],
   imports: [
     BrowserModule

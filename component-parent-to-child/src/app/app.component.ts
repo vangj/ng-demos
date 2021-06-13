@@ -12,6 +12,7 @@ export class AppComponent {
 
   counter = 0;
   lifecycleCounter = 0;
+  interceptCounter = 0;
   title = 'component-parent-to-child';
 
   byBindingButtonClicked() {
@@ -24,5 +25,9 @@ export class AppComponent {
 
   byLifecycleButtonClicked() {
     this.lifecycleCounter++;
+  }
+
+  byInterceptButtonClicked() {
+    this.interceptCounter++;
   }
 }

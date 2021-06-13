@@ -2,15 +2,10 @@
 
 Shows how a parent component can communicate with a child component.
 
-```bash
-ng g component child
-ng g component child-ref
-ng g component child-lifecycle
-```
-
 - The `child-component` uses normal binding. When the value in the parent changes, it changes also in the child.
 - The `child-ref` uses `ViewChild` to accomplish communication from the parent to the child. The parent must give an `id` to the child (e.g. `#`) and invoke its method to cause the change.
 - The `child-lifecycle` uses binding and the `OnChanges` event. The idea is that the child may want to listen in on when one of its value changes and do other things. The parent binds a variable to the child; the child listens for the change and can do more processing after the change.
+- The `child-intercept` shows how a parent component can communicate with a child component using a `getter` and `setter` of the child component. See this [article](https://angular.io/guide/component-interaction#intercept-input-property-changes-with-a-setter) for some details.
 
 # ComponentParentToChild
 
