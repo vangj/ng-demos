@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul>
+                <li>
+                    <a [routerLink]="['/']">default</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/main']">main</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
