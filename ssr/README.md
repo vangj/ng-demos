@@ -29,7 +29,7 @@ Then add Angular Univeral.
 
 ```bash
 cd web
-npm add @nguniversal/express-engine
+ng add @nguniversal/express-engine
 ```
 
 Try to see if it works.
