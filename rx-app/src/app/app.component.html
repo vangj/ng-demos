@@ -1,31 +1,74 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>
+        Purpose
+      </h2>
+
+      <p>
+        Shows how to use RxJS with some functions.
+      </p>
+
+      <ul>
+        <li>map, tap, flatMap, mapTo, scan, filter, debounceTime</li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/catchError" target="_blank">catchError</a></li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/mergeMap" target="_blank">mergeMap</a>
+          <span class="badge text-bg-secondary">transformation</span>
+        </li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/from" target="_blank">from: Converts almost
+            anything to an Observable.</a>
+            <span class="badge text-bg-secondary">creation</span>
+          </li>
+        <li>
+          <a href="https://rxjs-dev.firebaseapp.com/api/index/function/switchMap" target="_blank">switchMap: Maps each
+            value to an Observable, then flattens all of these inner Observables.</a>
+            <span class="badge text-bg-secondary">transformation</span>
+          <ul>
+            <li><a
+                href="https://vdsabev.medium.com/the-simple-difference-between-rxjs-switchmap-and-mergemap-397c311552a5#:~:text=So%20here's%20the%20simple%20difference,page%2C%20so%20I%20used%20mergeMap%20."
+                target="_blank">Difference between switchMap and mergeMap; switchMap cancels previous HTTP requests</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/interval" target="_blank">interval: Emits
+            ascending numbers, one every second (1000ms) up to the number 3</a>
+            <span class="badge text-bg-secondary">creation</span>
+          </li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/retry" target="_blank">retry</a></li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/share" target="_blank">share</a>
+          <span class="badge text-bg-secondary">multicast</span>
+        </li>
+        <li><a href="https://rxjs-dev.firebaseapp.com/api/index/function/zip" target="_blank">zip</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>References</h2>
+      <ul>
+        <li>
+          <a href="https://angular.io/guide/rx-library" target="_blank">
+            Angular RxJS
+          </a>
+        </li>
+        <li>
+          <a href="https://rxjs-dev.firebaseapp.com/api" target="_blank">
+            RxJS API List
+          </a>
+        </li>
+        <li>
+          <a href="https://ncjamieson.com/understanding-expand/" target="_blank">
+            RxJS: Understanding Expand
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-<h1>Purpose</h1>
-<p>
-  Shows how to use RxJS with some functions.
-</p>
-<ul>
-  <li>map, tap, flatMap, mapTo, scan, filter, debounceTime</li>
-</ul>
-<h1>References</h1>
-<ul>
-  <li>
-    <a href="https://angular.io/guide/rx-library" target="_blank">
-      Angular RxJS
-    </a>
-  </li>
-  <li>
-    <a href="https://rxjs-dev.firebaseapp.com/api" target="_blank">
-      RxJS API List
-    </a>
-  </li>
-  <li>
-    <a href="https://ncjamieson.com/understanding-expand/" target="_blank">
-      RxJS: Understanding Expand
-    </a>
-  </li>
-</ul>
