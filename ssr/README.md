@@ -25,11 +25,11 @@ Then create application.
 ng new web
 ```
 
-Then add Angular Univeral. 
+Then add Angular Univeral. It is important to add the major version that corresponds to your Angular version.
 
 ```bash
 cd web
-ng add @nguniversal/express-engine
+ng add @nguniversal/express-engine@^14.0.0
 ```
 
 Try to see if it works.
