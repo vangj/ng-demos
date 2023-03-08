@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
 
   constructor(@Inject(PLATFORM_ID) private readonly platformId: any) {
     if (isPlatformBrowser(platformId)) {
-      console.log('isPlatformBrowser');
       this.worker = new Worker(new URL('./app.worker', import.meta.url));
       this.worker.onmessage = ({ data }) => {
         console.log(`page got message: ${data}`);
