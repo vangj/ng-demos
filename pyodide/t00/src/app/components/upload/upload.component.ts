@@ -37,14 +37,22 @@ export class UploadComponent implements OnInit {
       console.log('onprogress');
     };
     reader.onloadend = (e: ProgressEvent) => {
-      console.log('onloadend');
-      const content = reader.result;
-      // console.log(content);
+      console.log(`onloadend ${new Date()}`);
+      const context = {
+          data: reader.result
+      };
+      console.log('context');
+      console.log(context);
 
       fetch('assets/py/load-data.py')
         .then(r => r.text())
         .then(script => {
+          console.log('script');
           console.log(script);
+
+          console.log((window as any).__pyodide__);
+          (window as any).__pyodide__.asyncRun(script, context);
+          // console.log(script);
         });
     };
 

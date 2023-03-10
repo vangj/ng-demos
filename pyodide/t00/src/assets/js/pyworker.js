@@ -1,4 +1,4 @@
-const pyodideWorker = new Worker('./js/webworker.js');
+const pyodideWorker = new Worker('./assets/js/webworker.js');
 
 const callbacks = {};
 

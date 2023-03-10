@@ -2,7 +2,13 @@ importScripts('https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js');
 
 async function loadPyodideAndPackages() {
   self.pyodide = await loadPyodide();
-  await self.pyodide.loadPackage(['numpy', 'pytz']);
+  await self.pyodide.loadPackage(['micropip']);
+  await self.pyodide.runPythonAsync(`
+  import micropip
+
+  await micropip.install(['tabulate'])
+  `);
+  await self.pyodide.loadPackage(['pandas', 'numpy', 'pytz']);
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
