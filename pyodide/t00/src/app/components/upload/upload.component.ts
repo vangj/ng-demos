@@ -41,18 +41,20 @@ export class UploadComponent implements OnInit {
       const context = {
           data: reader.result
       };
-      console.log('context');
-      console.log(context);
+      // console.log('context');
+      // console.log(context);
 
       fetch('assets/py/load-data.py')
         .then(r => r.text())
         .then(script => {
-          console.log('script');
-          console.log(script);
+          // console.log('script');
+          // console.log(script);
 
           console.log((window as any).__pyodide__);
-          (window as any).__pyodide__.asyncRun(script, context);
-          // console.log(script);
+          return (window as any).__pyodide__.asyncRun(script, context);
+        })
+        .then(r => {
+          console.log(r);
         });
     };
 
