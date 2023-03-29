@@ -1,0 +1,10 @@
+<div>
+    <a [routerLink]="['/default']">default</a> |
+    <a [routerLink]="['/page1']">page1</a> |
+    <a [routerLink]="['/page2']">page2</a>
+</div>
+<div>
+    <button (click)="btn1Clicked()">one</button>
+    <button (click)="btn2Clicked()">two</button>
+</div>
+<router-outlet></router-outlet>
