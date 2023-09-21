@@ -1,12 +1,20 @@
-<h1>Layouts</h1>
-<div>
-    <ul>
-        <li>
-            <a [routerLink]="['demo']">d3</a>
-        </li>
-        <li>
-            <a [routerLink]="['nx']">nx</a>
-        </li>
-    </ul>
+<div class="page-wrapper">
+    <div class="main-wrapper container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h1>Layouts</h1>
+            </div>
+            <div class="col-12">
+                <ul>
+                    <li>
+                        <a [routerLink]="['demo']">d3</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['nx']">nx</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<router-outlet></router-outlet>
