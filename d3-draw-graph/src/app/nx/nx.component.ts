@@ -28,6 +28,23 @@ export class NxComponent implements OnInit {
       });
   }
 
+  doLayout(layout: string): void {
+    console.log(layout);
+    this.clear();
+    this.getData(layout)
+      .subscribe({
+        next: d => this.visualize(d),
+        error: e => console.error(e)
+      });
+  }
+
+  private clear(): void {
+    const svg = document.getElementById('dataviz');
+    if (svg) {
+      svg.innerHTML = '';
+    }
+  }
+
   private visualize(data: any): void {
     const margin = { top: 10, right: 30, bottom: 30, left: 40 },
       width = 600 - margin.left - margin.right,
