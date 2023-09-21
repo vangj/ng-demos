@@ -1,5 +1,6 @@
 <h2>nx</h2>
 <div>
-    <button *ngFor="let layout of layouts" (click)="doLayout(layout)">{{layout}}</button>
+    <button *ngFor="let layout of layouts" (click)="clicked(layout)">{{layout}}</button>
 </div>
+<h3>{{layout}}</h3>
 <div id="dataviz"></div>

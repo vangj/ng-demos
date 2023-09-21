@@ -17,25 +17,26 @@ export class NxComponent implements OnInit {
     'fdp', 'sfdp', 'circo', 
     'twopi', 'osage', 'patchwork'
   ];
+  layout = this.layouts[0];
 
   constructor(private readonly http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getData('neato')
-      .subscribe({
-        next: d => this.visualize(d),
-        error: e => console.error(e)
-      });
+    this.doLayout();
   }
 
-  doLayout(layout: string): void {
-    console.log(layout);
+  clicked(layout: string): void {
+    this.layout = layout;
+    this.doLayout();
+  }
+
+  private doLayout(): void {
     this.clear();
-    this.getData(layout)
-      .subscribe({
-        next: d => this.visualize(d),
-        error: e => console.error(e)
-      });
+    this.getData(this.layout)
+    .subscribe({
+      next: d => this.visualize(d),
+      error: e => console.error(e)
+    });
   }
 
   private clear(): void {
